@@ -1,0 +1,90 @@
+
+body {
+    background: lightsteelblue;
+}
+
+h3 {
+    color: whitesmoke;
+    font-family: "Century Gothic";
+}
+
+h4 {
+    color: midnightblue;
+    font-family: "Century Gothic";
+    font-size: 10px;
+}
+
+h5 {
+    color: midnightblue;
+    font-family: "Century Gothic";
+}
+
+.redButton {
+    background: midnightblue;
+    border: 2px solid midnightblue;
+    border-radius: 3px;
+    padding: 6px 24px;
+    cursor: pointer;
+}
+
+.redButton:hover {
+    background: whitesmoke;
+}
+
+#window {
+    width: 350px;
+    height: 530px;
+    margin: 40px auto;
+    background: lightsteelblue;
+    border-radius: 20px;
+    border: 5px solid midnightblue;
+    z-index: 150;
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+}
+
+.form {
+    width: 275px;
+    margin: -15px auto 20px auto;
+    text-align: center;
+}
+.input {
+    width: 260px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.radio {
+    margin-bottom: 10px;
+}
+
+.close {
+    margin: 10px 0 0 320px;
+    cursor: pointer;
+    border: 2px solid midnightblue;
+    padding: 2px;
+    background: lightsteelblue;
+}
+
+.close:hover {
+    background: whitesmoke;
+}
+
+#gray {
+    opacity: 0.8;
+    padding: 15px;
+    background-color: lightsteelblue;;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    z-index: 100;
+    overflow: auto;
+}
