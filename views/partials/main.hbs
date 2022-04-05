@@ -1,0 +1,110 @@
+<main>
+
+
+  <div id= "aboutme" class="aboutme">
+    <h4><b>About me</b></h4>
+    <article>My name is Kristina Kuksenko. <br>I am a 3rd year student at ITMO University.</br> In my free time, sometimes I like to make up websites to gain new skills.</article>
+  </div>
+  <div id = "myskills" class="myskills">
+    <h4><b>My skills</b></h4>
+    <ul>
+      <li>C/C++</li>
+      <li>C#</li>
+      <li>HTML/CSS</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+    </ul>
+  </div>
+
+  <div id="myprojects" class="myprojects">
+    <h4><b>My projects</b></h4>
+    <ul>
+      <li>Можно ознакомиться на сайте:
+        <a href="https://github.com/ssevenseass">
+          <article>https://github.com/ssevenseass</article>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div id="mycontacts" class="mycontacts">
+    <h4><b>My contacts</b></h4>
+    <ul>
+      <li><b>Telegram</b>
+        <a href="https://t.me/ssevenseass">
+          <article>https://t.me/ssevenseass</article>
+        </a>
+      </li>
+      <li><b>Email</b>
+        <article>kristinakuksenko@mail.ru</article>
+      </li>
+      <li><b>VK</b>
+        <a href="https://vk.com/ssevenseass">
+          <article>https://vk.com/ssevenseass</article>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="codesnippet">
+    <a href="/snippet.hbs"><h4><b>Check out my code snippet</b></h4></a>
+  </div>
+
+  <div class="table">
+    <a href="/table.hbs"><h4><b>Look at my plans for the week</b></h4></a>
+  </div>
+
+  <div class="todo">
+    <a href="/todo.hbs"><h4><b>ToDo List</b></h4></a>
+
+  </div>
+
+  <div class="loadtime">
+    <a href="/load.hbs"><h4><b>Check out load time!</b></h4></a>
+  </div>
+  <div class="fetch">
+    <div class="container">
+      <div class="fetch__button">
+        <button id="btn" type="button" class="button">
+          <b>Generation of images</b>
+        </button>
+      </div>
+      <div class="fetch__body" id="dV"></div>
+    </div>
+    <script>var btn = document.getElementById("btn").addEventListener('click',getPost);
+    var k = 0;
+    var div = document.getElementById("dV");
+    function getPost(){
+      fetch('https://jsonplaceholder.typicode.com/photos')
+        .then((response)=>{
+          if(response.ok){
+            return response.json();
+          }else{
+            throw new Error(response.status);
+          }
+        })
+        .then((post) => {
+          for(let index = 0; index < 1; index++){
+            div.innerHTML +=`
+           <div class="card">
+           <img class="card-img" src="${post[k].thumbnailUrl}">
+           <div class="card-body">
+           <h4 class="card-title"><b>${post[k].id}</b></h4>
+           <h4 class="card-text"><b>${post[k].title}</b></h4>
+           </div>
+           </div>
+               `
+            k = k+1;
+          }
+        })
+        .catch((error)=>{
+          document.getElementById('dV').innerHTML = '<div class="container"><p>Ошибка</p></div>';
+          console.log("Ошибка: " + error);
+        });
+
+    }
+    </script>
+  </div>
+  <div class="freeblock">
+
+  </div>
+
+</main>
