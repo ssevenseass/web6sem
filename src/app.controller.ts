@@ -8,7 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { UserService } from './user.service';
-import { PostService } from './post.service';
+import { ArticleService } from './article.service';
 import { User as UserModel, Post as PostModel } from '@prisma/client';
 
 
@@ -51,7 +51,7 @@ export class AppController {
 
   constructor(
     private readonly userService: UserService,
-    private readonly postService: PostService,
+    private readonly postService: ArticleService,
   ) {}
 
   @Get('post/:id')
