@@ -7,7 +7,7 @@ import {
 } from '@prisma/client';
 
 @Injectable()
-export class PostService {
+export class ArticleService {
   constructor(private prisma: PrismaService) {}
 
   async post(postWhereUniqueInput: Prisma.PostWhereUniqueInput): Promise<Post | null> {
